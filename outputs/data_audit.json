@@ -1,0 +1,28 @@
+{
+  "raw_rows": 50000,
+  "source_date_min": "2010-12-01 08:26:00",
+  "source_date_max": "2011-01-09 15:13:00",
+  "missing_by_column": {
+    "InvoiceNo": 0,
+    "StockCode": 0,
+    "Description": 142,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "UnitPrice": 0,
+    "CustomerID": 17881,
+    "Country": 0
+  },
+  "suspect_duplicate_extras": 537,
+  "raw_cancellation_marked_lines": 923,
+  "raw_negative_quantity_lines": 1008,
+  "exclusive_status_counts": {
+    "included": 48931,
+    "suspect_duplicate": 537,
+    "nonpositive_or_invalid_price": 295,
+    "non_product_format": 237
+  },
+  "included_missing_customer_id": 17489,
+  "included_missing_description": 0,
+  "boundary_cuts_invoice": false,
+  "last_date_is_partial": true
+}

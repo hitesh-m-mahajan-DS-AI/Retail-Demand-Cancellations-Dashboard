@@ -1,0 +1,16 @@
+{
+  "included_lines": 48931,
+  "sales_lines": 48058,
+  "cancellation_lines": 873,
+  "observed_sale_invoices": 1785,
+  "sales_units": 433219,
+  "cancelled_units": 17635,
+  "gross_sales_gbp": 903965.73,
+  "cancellation_value_gbp": 22311.89,
+  "net_recorded_value_gbp": 881653.84,
+  "cancellation_line_share_pct": 1.7841450205391265,
+  "products_with_sales": 2826,
+  "products_to_80pct_units": 623,
+  "product_share_to_80pct": 22.045293701344658,
+  "top10_units_share_pct": 8.661900793824833
+}

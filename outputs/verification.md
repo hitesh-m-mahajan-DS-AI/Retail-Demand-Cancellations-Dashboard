@@ -1,0 +1,17 @@
+# Verification record - Project 11
+
+- Ran the original-source ingestion, audit, product/value summaries, Pareto calculation and saved figure export end to end on Windows/Python 3.12.
+- Downloaded the official no-login UCI archive to ignored temporary storage. Verified original ZIP and XLSX checksums recorded in `data/manifest.json`. Read 50,001 rows only to check the boundary; bundled exactly the first 50,000 data rows and all eight source fields, plus source_row.
+- Decompressed subset SHA-256: `a236999d5fd3429de9a2726aa69bdf73ca83256cf9ed5284db9fe35756e0715a`. Gzip bundle size: **842,474 bytes**. Full source workbook and archive are not project deliverables.
+- Source row 50,000 belongs to invoice 540541; source row 50,001 starts invoice 540542. The cutoff does not split an invoice; the final observed date is partial.
+- Reconciled **50,000 raw rows = 48,931 included + 537 suspect duplicate extras + 237 non-product-format + 295 nonpositive-price exclusions**. Reasons are exclusive and priority-dependent. Retained 17,489 eligible lines with missing customer IDs.
+- Verified **48,058 positive sale lines + 873 cancellation lines = 48,931 eligible lines**. Cancellation line share is **1.784145%**; this is not an original-purchase cancellation probability.
+- Independently summed original eligible quantity × price with Python Decimal, separately from the production integer-penny aggregation: **£903,965.73** gross; **£22,311.89** cancellation value; **£881,653.84** difference. Product and daily sums reconcile.
+- Computed **433,219 sale units**, **17,635 cancellation-marked units**, **2,826 products with positive sales**, and **623 products covering at least 80% of sale units (22.0453% of those products)**. Top-ten unit share: **8.6619%**.
+- Six unittest checks passed in **1.274 seconds**: hand-counted signed quantities/penny totals/line denominator, inclusive dates/country filtering, empty/cancellation-only results, Pareto 80% equality/SKU case separation, source partition/reconciliation, and real Streamlit default/France/empty-selection interactions.
+- Streamlit's Windows AppTest runner required localhost sockets. The sandbox blocked that socket initialization; rerunning with local-network access completed successfully. This is a test-environment requirement, not an application exception.
+- Launched the server bound to **127.0.0.1** only, with usage collection disabled, and reviewed the rendered dashboard in the browser. Confirmed all-country KPIs, actual product/cancellation charts, Pareto view and empty-country message.
+- Manually selected France and independently reconciled **583 eligible lines**, **6,771 sale units**, **£11,593.60** gross, **£11,530.75** net recorded value, and **7 cancellation lines (1.20069%)**. Restored all-country defaults after the check.
+- Visually inspected the static three-panel PNG and dashboard rendering, including the narrow viewport. Saved the Pareto dashboard screenshot; adjusted the 80% reference line for dark-background contrast.
+- Reran exports from the portfolio root: all **seven structured outputs** (four CSVs, two JSONs, one text recommendation file) had identical SHA-256 hashes. Final measured analysis/export runtime: **0.823 seconds**, excluding interpreter startup/imports; runtimes vary.
+- Results apply only to the disclosed prefix and analytical rules. No physical returns, original-purchase outcomes, complete year, stock levels, profit, causal demand, forecast or savings were inferred.

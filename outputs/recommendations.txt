@@ -1,0 +1,5 @@
+Review availability and listing accuracy for SKU 84077 (5,820 observed sales units). These transactions do not reveal stock on hand.
+
+Prioritize a catalogue review of the 623 SKUs covering at least 80% of observed sales units; validate on a longer period before changing replenishment policy.
+
+Investigate cancellation records for SKU 84347 (9,375 units); review causes and original invoices before drawing return-rate conclusions.
